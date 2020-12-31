@@ -14,22 +14,33 @@ const copierStyle = `
 
 const codeElements = ['code', 'samp'];
 
-let startIdx = 0;
 
-codeElements.forEach((codeElement) => {
-    document.querySelectorAll(codeElement).forEach(ele => {
-        if (! validCodeElement(ele)) return;
-        ele.setAttribute('data-code-idx', startIdx);
-        ele.innerHTML += '<br>';
-        const copier = document.createElement('span');
-        copier.setAttribute('data-code-idx', startIdx);
-        copier.setAttribute('style', copierStyle);
-        copier.textContent = "Copy";
-        copier.addEventListener('click', copierClicked);
-        ele.parentElement.append(copier);
-        startIdx++;
+
+setTimeout(() => {
+    if (document.readyState !== 'loading') init()
+    else document.addEventListener('DOMContentLoaded', init);
+}, 2500)
+
+
+
+
+function init() {
+    let startIdx = 0;
+    codeElements.forEach((codeElement) => {
+        document.querySelectorAll(codeElement).forEach(ele => {
+            if (! validCodeElement(ele)) return;
+            ele.setAttribute('data-code-idx', startIdx);
+            ele.innerHTML += '<br>';
+            const copier = document.createElement('span');
+            copier.setAttribute('data-code-idx', startIdx);
+            copier.setAttribute('style', copierStyle);
+            copier.textContent = "Copy";
+            copier.addEventListener('click', copierClicked);
+            ele.parentElement.append(copier);
+            startIdx++;
+        })
     })
-})
+}
 
 function validCodeElement(ele) {
     return ele.parentElement.tagName === 'PRE';
