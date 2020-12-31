@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Code-Copy-Fast",
+  "version": "1.0.0",
+  "description": "A placed element for copying code fast through mouse click.",
+  "content_scripts": [{
+    "js": ["main.js"],
+    "matches": ["<all_urls>"]
+  }]
+}
