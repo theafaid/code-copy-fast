@@ -2,7 +2,7 @@
 
 Rather than select the whole code content using your mouse then copy you can Just click on copy button directly.
 
-![Alt text](screenshot.png?raw=true "Title")
+![Alt text](screenshot.gif?raw=true "Title")
 
 
 ## How to install?
